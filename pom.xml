@@ -9,7 +9,7 @@
   <url>http://maven.apache.org</url>
 <properties>
   <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  <spring.version>1.2.6</spring.version>
+<!--   <spring.version>1.2.6</spring.version> -->
   <developer.organization><![CDATA[chengdisheng]]></developer.organization>
     <!-- spring版本号 -->
 	<spring.version>4.3.7.RELEASE</spring.version>
@@ -25,7 +25,7 @@
     <dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.11</version>
+			<version>${junit.version}</version>
 			<!-- 表示开发的时候引入，发布的时候不会加载此包 -->
 			<scope>test</scope>
 		</dependency>

@@ -11,8 +11,11 @@ package com.cds.chengyu.test;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.cds.chengyu.model.User;
 import com.cds.chengyu.service.IUserService;
@@ -28,21 +31,26 @@ import com.cds.chengyu.service.IUserService;
  * @version 
  * @since JDK 1.6
  */
+//@RunWith(SpringJUnit4ClassRunner.class)
+//@ContextConfiguration(value = {"file:src/test/resources/config/spring-mvc.xml",
+//		"file:src/test/resources/config/spring-mybatis.xml"})
 public class UserTest {
+	@SuppressWarnings("unused")
 	private IUserService userService;
 	@Before
 	public void before(){                                                                    
 		@SuppressWarnings("resource")
 		ApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"classpath:config/spring-mvc.xml"
 				,"classpath:config/spring-mybatis.xml"});
-		userService = (IUserService) context.getBean("userServiceImpl");
+		
+		userService = (IUserService) context.getBean("userService");
 	}
 	
 	@Test
 	public void addUser(){
-//		User user = new User();
-//		user.setNickname("abc");
-//		user.setState(2);
+		User user = new User();
+		user.setNickname("abc");
+		user.setState(2);
 //		System.out.println(userService.insertUser(user));
 	}
 
